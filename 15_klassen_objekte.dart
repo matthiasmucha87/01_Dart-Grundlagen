@@ -4,6 +4,7 @@ void main() {
 
   car1.init();
   car2.init();
+  car1.drive();
   car1.sColor = "rot";
   car2.sColor = "blau";
 
@@ -12,7 +13,13 @@ void main() {
 }
 
 class Car {
-  late String sColor;
+  late String _sColor;
+
+  String get sColor => _sColor;
+
+  set sColor(String value) {
+    _sColor = value;
+  }
 
   void init() {
     this.sColor = "grey";
